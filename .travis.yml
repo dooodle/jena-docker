@@ -12,6 +12,10 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
+branches:
+  only:
+    - dooodle
+
 sudo: required
 
 language: c
@@ -20,8 +24,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t jena jena
-  - docker build -t jena-fuseki jena-fuseki
+  - docker build -t dooodle/jena jena
+  - docker build -t dooodle/jena-fuseki jena-fuseki
   - echo "<http://example.com/a> <http://example.com/b> <http://example.com/c> ." > /tmp/example.ttl
 
 script:
@@ -35,3 +39,5 @@ script:
   - docker logs fuseki | grep --quiet ^admin=
   - docker logs fuseki | grep --quiet Started
   - curl http://127.0.0.1:3030/ | grep --quiet Fuseki
+  - bash docker_push
+
