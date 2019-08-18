@@ -29,15 +29,15 @@ before_install:
   - echo "<http://example.com/a> <http://example.com/b> <http://example.com/c> ." > /tmp/example.ttl
 
 script:
-  - docker run jena riot --version # Does it run at all?
-  - docker run --volume /tmp:/rdf jena riot example.ttl > /tmp/example.nq
-  - grep --quiet example.com /tmp/example.nq
-  - sudo service docker restart ; sleep 10 # workaround for https://github.com/travis-ci/travis-ci/issues/4778
-  - docker run --name fuseki -p 127.0.0.1:3030:3030 -d jena-fuseki
-  - sleep 8
-  - docker logs fuseki
-  - docker logs fuseki | grep --quiet ^admin=
-  - docker logs fuseki | grep --quiet Started
-  - curl http://127.0.0.1:3030/ | grep --quiet Fuseki
+  # - docker run jena riot --version # Does it run at all?
+  # - docker run --volume /tmp:/rdf jena riot example.ttl > /tmp/example.nq
+  # - grep --quiet example.com /tmp/example.nq
+  # - sudo service docker restart ; sleep 10 # workaround for https://github.com/travis-ci/travis-ci/issues/4778
+  # - docker run --name fuseki -p 127.0.0.1:3030:3030 -d jena-fuseki
+  # - sleep 8
+  # - docker logs fuseki
+  # - docker logs fuseki | grep --quiet ^admin=
+  # - docker logs fuseki | grep --quiet Started
+  # - curl http://127.0.0.1:3030/ | grep --quiet Fuseki
   - bash docker_push
 
