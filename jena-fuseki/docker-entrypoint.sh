@@ -44,6 +44,8 @@ while [[ $(curl -I http://localhost:3030 2>/dev/null | head -n 1 | cut -d$' ' -f
   sleep 1s
 done
 
+./load.sh mondial
+
 # Convert env to datasets
 printenv | egrep "^FUSEKI_DATASET_" | while read env_var
 do

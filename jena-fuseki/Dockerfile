@@ -74,7 +74,7 @@ COPY load.sh /jena-fuseki/
 COPY tdbloader /jena-fuseki/
 RUN chmod 755 /jena-fuseki/load.sh /jena-fuseki/tdbloader
 #VOLUME /staging
-
+COPY mondial.nt /staging/mondial.nt
 
 # Where we start our server from
 WORKDIR /jena-fuseki
