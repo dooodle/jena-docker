@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fuseki-deployment
+  labels:
+    app: fuseki
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fuseki
+  template:
+    metadata:
+      labels:
+        app: fuseki
+    spec:
+      containers:
+      - name: fuseki
+        image: dooodle/jena-fuseki:latest
+        # env: 
+        # - name: FUSEKI_DATASET_1
+        #   value: "mondial"
+        ports:
+        - containerPort: 3030

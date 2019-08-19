@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fuseki-service
+spec:
+  type: NodePort
+  selector:
+    app: fuseki
+  ports:
+  - protocol: TCP
+    port: 3030
+    targetPort: 3030
