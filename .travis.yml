@@ -13,7 +13,7 @@ script:
   - bash docker_push
   - bash install-kubectl
   - kubectl get pods | grep fuseki
-  - kubectl patch deployment fuseki -p   "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`date +'%s'`\"}}}}}"
+  - kubectl patch deployment fuseki-deployment -p   "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`date +'%s'`\"}}}}}"
   - kubectl get pods | grep fuseki
   
 
