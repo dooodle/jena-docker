@@ -11,7 +11,7 @@ notifications:
 
 script:
   - bash get-latest-mondial-nt
-  - cat jena-fuseki/mondial.nt
+  # - cat jena-fuseki/mondial.nt
   - docker build -t dooodle/jena jena
   - docker build -t dooodle/jena-fuseki jena-fuseki
   - bash docker_push
