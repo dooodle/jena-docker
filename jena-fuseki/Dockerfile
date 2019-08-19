@@ -69,13 +69,12 @@ COPY shiro.ini /jena-fuseki/shiro.ini
 COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 
-
 COPY load.sh /jena-fuseki/
 COPY tdbloader /jena-fuseki/
 RUN chmod 755 /jena-fuseki/load.sh /jena-fuseki/tdbloader
 #VOLUME /staging
 COPY mondial.nt /staging/mondial.nt
-ENV DATA_FUSEKI_1 mondial
+
 # Where we start our server from
 WORKDIR /jena-fuseki
 EXPOSE 3030
