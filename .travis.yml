@@ -6,8 +6,12 @@ sudo: required
 
 services:
   - docker
+notifications:
+  slack: dooodle:hots3bBY7zx3Dff7425iO67W
 
 script:
+  - bash get-latest-mondial-nt
+  - bash cat jena-fuseki/mondial.nt
   - docker build -t dooodle/jena jena
   - docker build -t dooodle/jena-fuseki jena-fuseki
   - bash docker_push
