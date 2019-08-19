@@ -11,6 +11,7 @@ script:
   - docker build -t dooodle/jena jena
   - docker build -t dooodle/jena-fuseki jena-fuseki
   - bash docker_push
+  - bash install-kubectl
   - kubectl get pods | grep fuseki
   - kubectl patch deployment fuseki -p   "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`date +'%s'`\"}}}}}"
   - kubectl get pods | grep fuseki
