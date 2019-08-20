@@ -12,6 +12,7 @@ notifications:
 script:
   - bash get-latest-mondial-nt
   # - cat jena-fuseki/mondial.nt
+  - sed -i "s/^admin=.*/admin=$ADMIN_PASSWORD/" "$FUSEKI_BASE/shiro.ini"
   - docker build -t dooodle/jena jena
   - docker build -t dooodle/jena-fuseki jena-fuseki
   - bash docker_push

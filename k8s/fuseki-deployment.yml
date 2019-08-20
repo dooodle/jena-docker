@@ -17,8 +17,8 @@ spec:
       containers:
       - name: fuseki
         image: dooodle/jena-fuseki:latest
-        # env: 
-        # - name: FUSEKI_DATASET_1
-        #   value: "mondial"
+        env: 
+        # - name: SHRUG
+        #   value: ""
         ports:
         - containerPort: 3030
