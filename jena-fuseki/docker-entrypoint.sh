@@ -26,8 +26,8 @@ if [ ! -f "$FUSEKI_BASE/shiro.ini" ] ; then
     ADMIN_PASSWORD=$(pwgen -s 15)
     echo "Randomly generated admin password:"
     echo ""
-    echo "admin=$ADMIN_PASSWORD"
   fi
+  echo "admin=$ADMIN_PASSWORD"
   echo ""
   echo "###################################"
 fi
@@ -55,6 +55,7 @@ do
          -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'\
          --data "dbName=${dataset}&dbType=tdb"
 done
+echo "create mondial dataset"
 # create the mondial dataset
     curl -s 'http://localhost:3030/$/datasets'\
          -H "Authorization: Basic $(echo -n admin:${ADMIN_PASSWORD} | base64)" \
