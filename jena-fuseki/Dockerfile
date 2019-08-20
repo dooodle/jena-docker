@@ -31,6 +31,7 @@ ENV FUSEKI_VERSION 3.11.0
 ENV ASF_MIRROR_EU http://www.eu.apache.org/dist/
 ENV ASF_MIRROR_US http://www.us.apache.org/dist/
 ENV ASF_ARCHIVE http://archive.apache.org/dist/
+ENV ADMIN_PASSWORD
 #
 
 # Config and data
