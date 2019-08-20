@@ -12,7 +12,7 @@ notifications:
 script:
   - bash get-latest-mondial-nt
   # - cat jena-fuseki/mondial.nt
-  - sed -i "s/ENV ADMIN_PASSWORD=.*/ENV ADMIN_PASSWORD=$ADMIN_PASSWORD/" "jena-fuseki/Dockerfile"
+  - sed -i "s/ENV ADMIN_PASSWORD.*/ENV ADMIN_PASSWORD $ADMIN_PASSWORD/" "jena-fuseki/Dockerfile"
   - docker build -t dooodle/jena jena
   - docker build -t dooodle/jena-fuseki jena-fuseki
   - bash docker_push
