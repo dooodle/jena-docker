@@ -55,5 +55,11 @@ do
          -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'\
          --data "dbName=${dataset}&dbType=tdb"
 done
+# create the mondial dataset
+    curl -s 'http://localhost:3030/$/datasets'\
+         -H "Authorization: Basic $(echo -n admin:${ADMIN_PASSWORD} | base64)" \
+         -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'\
+         --data "dbName=mondial&dbType=tdb"
+
 
 wait
