@@ -32,7 +32,7 @@ if [ ! -f "$FUSEKI_BASE/shiro.ini" ] ; then
   echo "###################################"
 fi
 
-$ADMIN_PASSWORD can always override
+#$ADMIN_PASSWORD can always override
 if [ -n "$ADMIN_PASSWORD" ] ; then
   sed -i "s/^admin=.*/admin=$ADMIN_PASSWORD/" "$FUSEKI_BASE/shiro.ini"
 fi
