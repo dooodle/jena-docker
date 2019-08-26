@@ -17,6 +17,7 @@ spec:
       containers:
       - name: fuseki
         image: dooodle/jena-fuseki:latest
+        imagePullPolicy: Always
         env: 
         # - name: SHRUG
         #   value: ""
